@@ -1,0 +1,61 @@
+@mixin square($color) {
+    background-color: $color;
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.color-block_dark-shade-100{
+    @include square(#1F2041);
+}
+.color-block_dark-shade-75{
+    @include square(rgba(31, 32, 65, 0.75));
+}
+.color-block_dark-shade-50{
+    @include square(rgba(31, 32, 65, 0.5));
+}
+.color-block_dark-shade-25{
+    @include square(rgba(31, 32, 65, 0.25));
+}
+.color-block_dark-shade-5{
+    @include square(rgba(31, 32, 65, 0.05));
+}
+.color-block_purple{
+    @include square(#BC9CFF);
+}
+.color-block_green{
+    @include square(#6FCF97);
+}
+
+.wrapper{
+    max-width: 1440px;
+    // box-sizing: border-box;  
+    margin: 0 auto;
+}
+
+.colors{
+    margin-top: 145px;
+    margin-left: 150px;
+}
+.block-with-square{
+    display: flex;
+    
+}
+
+.text{
+    flex-direction: column;
+    margin-left: 40px;
+
+    h2{
+        margin: 0;
+        margin-top: 7px;
+    }
+
+    span{
+        margin-top: 100px;
+    }
+}
+
+
+
