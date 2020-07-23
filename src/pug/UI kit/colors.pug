@@ -6,15 +6,21 @@ html(lang="en")
         title Colors and Type
     body
         include ./includes/color_block
+        img(src="../../src/assets/png/logo.png" class="logo")
         .wrapper
-            .colors
-                +square("color-block_dark-shade-100", "Dark Shade 100%", "#1F2041")
-                +square("color-block_dark-shade-75", "Dark Shade 75%", "#1F2041")
-                +square("color-block_dark-shade-50", "Dark Shade 50%", "#1F2041")
-                +square("color-block_dark-shade-25", "Dark Shade 25%", "#1F2041")
-                +square("color-block_dark-shade-5", "Dark Shade 5%", "#1F2041")
-                +square("color-block_purple", "Purple", "#BC9CFF")
-                +square("color-block_green", "Green", "#6FCF97")
-            .headers
+            .types-colors
+                .colors
+                    +square("color-block_dark-shade-100", "Dark Shade 100%", "#1F2041")
+                    +square("color-block_dark-shade-75", "Dark Shade 75%", "#1F2041")
+                    +square("color-block_dark-shade-50", "Dark Shade 50%", "#1F2041")
+                    +square("color-block_dark-shade-25", "Dark Shade 25%", "#1F2041")
+                    +square("color-block_dark-shade-5", "Dark Shade 5%", "#1F2041")
+                    +square("color-block_purple", "Purple", "#BC9CFF")
+                    +square("color-block_green", "Green", "#6FCF97")
+                .types
+                    +type("types__letter-h1", "types__text-first", "H1", "This one is the sub-section or widget title")
+                    +type("types__letter-h2", "types__text-second", "H2", "Next one is the item title inside widgets ")
+                    +type("types__letter-h3", "types__text-third", "H3", "This is a label or CTA text")
+                    +type("types__body", "types__text-fourth", "Body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.")
             
         

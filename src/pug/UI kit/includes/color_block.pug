@@ -4,3 +4,9 @@ mixin square(name, nameOfColor, color)
         .text
             h2= nameOfColor
             span= color
+
+mixin type(typeOfLet, typeOfText, firstText, secondText)
+    .type__container
+        .type__letter: span(class= "" + typeOfLet)= firstText
+        .type__text
+            span(class= "" + typeOfText)= secondText
