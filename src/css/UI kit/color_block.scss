@@ -10,12 +10,10 @@
 .types-colors{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 145px;
+    margin-top: 10vh;//145px;
     margin-bottom: 145px;
     @media screen and (max-width: 1150px){
-        display: block;
-        margin-left: 10vw;
-        
+        display: block;  
     }
     
 }
@@ -62,14 +60,6 @@
     @include square(#6FCF97);
     margin-bottom: 0;
 }
-
-.wrapper{
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-
 
 
 .text{

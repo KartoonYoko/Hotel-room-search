@@ -12,6 +12,16 @@ body{
     color: rgba(31, 32, 65, 0.75);
 }
 
+
+.wrapper{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
+    @media screen and (max-width: 1150px){
+        margin-left: 10vw;
+    }
+}
+
 h1{
     font-family: Quicksand;
     font-style: normal;
@@ -45,3 +55,5 @@ h3{
 
     color: #1F2041;
 }
+
+
