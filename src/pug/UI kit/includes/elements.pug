@@ -1,4 +1,6 @@
-mixin text-field(text)
+mixin text-field(text, input_text)
     .text-field_default
         h3.text-field__text= text
-        input(type="text" class="text-field__input")
+        input(type="text" class="text-field__input" placeholder= input_text required)
+        
+        

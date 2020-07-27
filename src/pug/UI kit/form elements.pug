@@ -6,6 +6,7 @@ html(lang="en")
         title Form elements
     body
         include ./includes/elements
+        
+        img(src="../../src/assets/png/logo.png" class="logo")
         .wrapper
-            img(src="../../src/assets/png/logo.png" class="logo")
-            +text-field("text field")
+            +text-field("text field", "Email")

@@ -6,7 +6,6 @@ body{
     line-height: 24px;
     /* or 171% */
 
-
     /* Dark 75% */
 
     color: rgba(31, 32, 65, 0.75);
@@ -17,10 +16,9 @@ body{
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 15px;
-    @media screen and (max-width: 1150px){
-        margin-left: 10vw;
-    }
+    margin: 0 10vw;
 }
+
 
 h1{
     font-family: Quicksand;
