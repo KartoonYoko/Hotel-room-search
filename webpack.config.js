@@ -30,6 +30,10 @@ module.exports = {
             template: './pug/pages/index.pug',
         }),
         new HtmlWebpackPlugin({
+            filename: 'UI kit/form elements.html',
+            template: './pug/UI kit/form elements.pug',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'UI kit/colors.html',
             template: './pug/UI kit/colors.pug',
         })
