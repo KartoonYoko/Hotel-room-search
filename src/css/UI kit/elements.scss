@@ -22,9 +22,6 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 24px;
-    /* identical to box height, or 171% */
-
-    /* Dark 75% */
 
     color: rgba(31, 32, 65, 0.75);
 }
@@ -34,10 +31,6 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 18px;
-    /* identical to box height, or 129% */
-
-
-    /* Dark 25% */
 
     color: rgba(31, 32, 65, 0.25);
 }
@@ -45,10 +38,263 @@
     border: 1px solid rgba(31, 32, 65, 0.5);
     outline: none;
 }
-
 // end styles of TEXT-FIELD
 
 
 // start styles of DROPDOWN
+.dropdown{
+    width: 320px;
 
+    .dropdown__head {
+        display: flex;
+        justify-content: space-between;
+
+        width: 320px;
+        height: 44px;
+
+        background: #FFFFFF;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding-left: 15px;
+        line-height: 44px; 
+
+        color: rgba(31, 32, 65, 0.75);
+
+        &:hover, &:focus, &:active{
+            cursor: default;
+            border: 1px solid rgba(31, 32, 65, 0.5);
+            outline: none;
+        }
+
+        .dropdown__arrow {
+            width: 7px;
+            height: 7px;
+        
+            border-top: 2px solid rgba(31, 32, 65, 0.75);
+            border-right: 2px solid rgba(31, 32, 65, 0.75);
+            transform: rotate(135deg);
+        
+            margin-top: 13px;
+            margin-right: 15px;
+        }  
+    }
+
+    .dropdown__head-active{
+        border: 1px solid rgba(31, 32, 65, 0.5);
+        border-radius: 4px 4px 0px 0px;
+    }
+    .dropdown__head-nonactive{
+        border: 1px solid rgba(31, 32, 65, 0.25);
+    }
+
+    .dropdown__menu{
+        position:absolute;
+        width: 320px;
+        //height: 159px;
+        display: none;
+
+        background: #FFFFFF;
+        border: 1px solid rgba(31, 32, 65, 0.5);
+        border-top: 0px solid; 
+        box-sizing: border-box;
+        border-radius: 0px 0px 4px 4px;
+        padding-bottom: 13px;
+
+        z-index: 1000;
+
+        &:hover, &:focus, &:active{
+            border: 1px solid rgba(31, 32, 65, 0.5);
+            border-top: 0px solid red; /* Линия сверху текста */
+            outline: none;
+        }
+
+        .dropdown__wrapper{
+            margin-left: 15px;
+            margin-right: 7px;
+
+
+            .dropdown__item{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .dropdown__text{  
+                    font-weight: bold;
+                    font-size: 12px;
+                    line-height: 15px;
+                    text-transform: uppercase;        
+                    color: #1F2041;
+
+                    &:hover, &:focus, &:active{
+                        cursor: default;
+                    }
+
+                }
+
+                .dropdown__wrapper-counter{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 92px;
+
+                    .dropdown__circle{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid rgba(31, 32, 65, 0.25);
+                        box-sizing: border-box;
+                        border-radius: 22px;
+
+                        &:hover, &:focus, &:active{
+                            cursor: pointer;
+                        }
+
+                        .dropdown__minus{   
+                            height: 2px;    
+                            width: 10px;
+                            background-color: rgba(31, 32, 65, 0.25);
+
+                            &:hover, &:focus, &:active{
+                                cursor: pointer;
+                            }
+                        }
+
+                        .dropdown__plus{   
+                            height: 2px;    
+                            width: 10px;
+                            background-color: rgba(31, 32, 65, 0.25);
+
+                            &:hover, &:focus, &:active{
+                                cursor: pointer;
+                            }
+                        }
+                        .dropdown__plus:first-child{
+                            transform: rotate(90deg);
+                            position: absolute;
+                        }
+
+                    }
+
+                    .dropdown__circle-active{
+                       
+                        border: 1px solid rgba(31, 32, 65, 0.25);
+ 
+                        .dropdown__minus{   
+                            background-color: rgba(31, 32, 65, 0.25);
+                        }
+
+                        .dropdown__plus{   
+                            background-color: rgba(31, 32, 65, 0.25);
+                        }
+                    }
+
+                    .dropdown__circle-nonactive{
+                        border: 1px solid rgba(31, 32, 65, 0.10);
+ 
+                        .dropdown__minus{   
+                            background-color: rgba(31, 32, 65, 0.1);
+                        }
+
+                        .dropdown__plus{   
+                            background-color: rgba(31, 32, 65, 0.1);
+                        }
+                    }
+                    
+
+
+                    .dropdown__counter{
+                        font-weight: bold;
+                        font-size: 12px;
+                        line-height: 15px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        color: #1F2041;
+
+                        outline: none;
+                        border: none;
+
+                        max-height: 15px;
+                        max-width: 15px;
+
+                        &:hover, &:focus, &:active{
+                            cursor: default;
+                        }
+                    }
+
+                }
+            }
+
+            .dropdown__footer{
+                display: flex;
+                justify-content: space-between;      
+                margin-top: 19px;
+
+                .dropdown__btn-clear{
+                    font-weight: bold;
+                    font-size: 12px;
+                    line-height: 15px;
+                
+                    text-transform: uppercase;
+                
+                    color: rgba(31, 32, 65, 0.5);
+
+                    &:hover, &:focus, &:active{
+                        cursor: pointer;
+                        color: rgba(18, 19, 66, 0.5);
+                    }
+
+                    
+                }
+                .dropdown__btn-clear-nonactive{
+                    color: white; 
+                    -webkit-touch-callout: none; /* iOS Safari */
+                    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+                    -khtml-user-select: none;    /* Konqueror */
+                    -moz-user-select: none;      /* Firefox */
+                    -ms-user-select: none;       /* Internet Explorer/Edge */
+                    user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+
+                    &:hover, &:focus, &:active{
+                        cursor: default;
+                        color: white;
+                    }
+                }
+
+                .dropdown__btn-accept{
+                    font-weight: bold;
+                    font-size: 12px;
+                    line-height: 15px;
+                    
+                    border: none;
+                    text-transform: uppercase;
+
+                    color: #BC9CFF;
+                    background-color: white;
+                    
+                    outline: none;
+                    border: none;
+
+                    max-height: 15px;
+                    max-width: 90px;
+
+                    &:hover, &:focus, &:active{
+                        cursor: pointer;
+                        color: #a47cfc;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    
+}
 // end styles of DROPDOWN
+
+

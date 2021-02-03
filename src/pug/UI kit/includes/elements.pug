@@ -2,5 +2,32 @@ mixin text-field(text, input_text)
     .text-field_default
         h3.text-field__text= text
         input(type="text" class="text-field__input" placeholder= input_text required)
+
+mixin dropdown-item(text, name)
+    .dropdown__item
+        .dropdown__text= text
+        .dropdown__wrapper-counter
+            .dropdown__circle.dropdown__circle-active
+                .dropdown__minus
+            input(class="dropdown__counter" name= name type="text" value="0" readonly)
+            .dropdown__circle.dropdown__circle-active
+                .dropdown__plus
+                .dropdown__plus
+
+mixin dropdown(header_name, text, action)
+    form.dropdown(method="post" action= action ) 
+        h3.text-field__text= header_name
+        .dropdown__head.dropdown__head-nonactive
+            span.dropdown__head-text= text
+            .dropdown__arrow
+        .dropdown__menu(id="myDropdown")
+            .dropdown__wrapper
+                +dropdown-item("взрослые", 'parents')
+                +dropdown-item("дети", 'children')
+                +dropdown-item("младенцы", 'babies')
+    
+                .dropdown__footer
+                    .dropdown__btn-clear.dropdown__btn-clear-nonactive очистить
+                    input.dropdown__btn-accept(value="применить" type="submit")
         
         

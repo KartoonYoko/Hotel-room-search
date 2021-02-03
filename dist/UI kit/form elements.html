@@ -11,6 +11,60 @@
             <h3 class="text-field__text">text field</h3>
             <input class="text-field__input" type="text" placeholder="Email" required>
           </div>
+          <form class="dropdown" method="post" action=""> 
+            <h3 class="text-field__text">Dropdown</h3>
+            <div class="dropdown__head dropdown__head-nonactive"><span class="dropdown__head-text">Сколько гостей?</span>
+              <div class="dropdown__arrow"></div>
+            </div>
+            <div class="dropdown__menu" id="myDropdown">
+              <div class="dropdown__wrapper">
+                    <div class="dropdown__item">
+                      <div class="dropdown__text">взрослые</div>
+                      <div class="dropdown__wrapper-counter">
+                        <div class="dropdown__circle dropdown__circle-active">
+                          <div class="dropdown__minus"></div>
+                        </div>
+                        <input class="dropdown__counter" name="parents" type="text" value="0" readonly>
+                        <div class="dropdown__circle dropdown__circle-active">
+                          <div class="dropdown__plus"></div>
+                          <div class="dropdown__plus"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dropdown__item">
+                      <div class="dropdown__text">дети</div>
+                      <div class="dropdown__wrapper-counter">
+                        <div class="dropdown__circle dropdown__circle-active">
+                          <div class="dropdown__minus"></div>
+                        </div>
+                        <input class="dropdown__counter" name="children" type="text" value="0" readonly>
+                        <div class="dropdown__circle dropdown__circle-active">
+                          <div class="dropdown__plus"></div>
+                          <div class="dropdown__plus"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dropdown__item">
+                      <div class="dropdown__text">младенцы</div>
+                      <div class="dropdown__wrapper-counter">
+                        <div class="dropdown__circle dropdown__circle-active">
+                          <div class="dropdown__minus"></div>
+                        </div>
+                        <input class="dropdown__counter" name="babies" type="text" value="0" readonly>
+                        <div class="dropdown__circle dropdown__circle-active">
+                          <div class="dropdown__plus"></div>
+                          <div class="dropdown__plus"></div>
+                        </div>
+                      </div>
+                    </div>
+                <div class="dropdown__footer">
+                  <div class="dropdown__btn-clear dropdown__btn-clear-nonactive">очистить</div>
+                  <input class="dropdown__btn-accept" value="применить" type="submit">
+                </div>
+              </div>
+            </div>
+          </form>
     </div>
+    <script src="../../src/js/elements/elements_functions.js"></script>
   <script src="../main.bundle.js"></script></body>
 </html>
