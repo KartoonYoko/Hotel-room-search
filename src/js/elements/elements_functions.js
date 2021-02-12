@@ -116,7 +116,7 @@ function writeNumberOfGuests(){
     });
 
     const text = document.querySelector('.dropdown__head-text'); 
-    console.log(text.innerHTML);
+
     if(countersValue == 0){
         text.innerHTML = 'Сколько гостей?';
     }

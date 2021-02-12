@@ -1,5 +1,5 @@
 mixin text-field(text, input_text)
-    .text-field_default
+    .text-field-default
         h3.text-field__text= text
         input(type="text" class="text-field__input" placeholder= input_text required)
 
@@ -30,4 +30,13 @@ mixin dropdown(header_name, text, action)
                     .dropdown__btn-clear.dropdown__btn-clear-nonactive очистить
                     input.dropdown__btn-accept(value="применить" type="submit")
         
-        
+
+mixin date_dropdown()
+    .date-dropdown
+        .date-dropdown__head
+            span.date-dropdown__head__text 
+            .date-dropdown__head__arrow
+        .date-dropdown__calendar
+
+
+
