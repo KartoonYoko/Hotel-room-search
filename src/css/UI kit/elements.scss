@@ -1,22 +1,21 @@
 // start styles of TEXT-FIELD
 
 .text-field-default{
-    margin-top: 10vh;
 
     .text-field__text{
         margin: 0;
         margin-bottom: 5px;
     }
     .text-field__input{
+        box-sizing: border-box;
         width: 320px;
         height: 44px;
-    
+        padding-left: 15px;
+
         background: #FFFFFF;
         border: 1px solid rgba(31, 32, 65, 0.25);
-        box-sizing: border-box;
+
         border-radius: 4px;
-        padding-left: 15px;
-    
         font-family: Montserrat;
         font-style: normal;
         font-weight: normal;
@@ -289,4 +288,32 @@
 }
 // end styles of DROPDOWN
 
+// start styles of DROPDOWN date
+.date-dropdown{
 
+    .date-dropdown__head{
+        position: relative;
+        box-sizing: border-box;
+        width: 320px;
+        height: 44px;
+
+        border: 1px solid rgba(31, 32, 65, 0.25);
+
+        background: #FFFFFF;
+        border-radius: 4px;
+        padding-left: 15px;
+
+        .date-dropdown__head__text{
+            position: absolute;
+            top: 50%;
+
+            margin-top: -0.75rem;
+            display: inline-block;
+            
+        }
+
+    }
+
+    
+}
+// end styles of DROPDOWN date

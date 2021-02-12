@@ -31,10 +31,11 @@ mixin dropdown(header_name, text, action)
                     input.dropdown__btn-accept(value="применить" type="submit")
         
 
-mixin date_dropdown()
+mixin date_dropdown(text)
     .date-dropdown
+        h3.date-dropdown__head-text= text
         .date-dropdown__head
-            span.date-dropdown__head__text 
+            span.date-dropdown__head__text= "ДД.ММ.ГГ"
             .date-dropdown__head__arrow
         .date-dropdown__calendar
 
