@@ -291,27 +291,254 @@
 // start styles of DROPDOWN date
 .date-dropdown{
 
+
     .date-dropdown__head{
+
         position: relative;
         box-sizing: border-box;
-        width: 320px;
+
+        width: 150px;
         height: 44px;
+        padding-left: 15px;
 
         border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 4px;
 
         background: #FFFFFF;
-        border-radius: 4px;
-        padding-left: 15px;
+        line-height: 18px;
+        color: Dark 75%;
+
+        &:hover, &:focus, &:active{
+            cursor: default;
+            border: 1px solid rgba(31, 32, 65, 0.5);
+            outline: none;
+        }
 
         .date-dropdown__head__text{
             position: absolute;
             top: 50%;
 
-            margin-top: -0.75rem;
+            margin-top: -9px; // minus half of line height
             display: inline-block;
             
         }
 
+        .date-dropdown__head__arrow{
+            position: absolute;
+            top: 50%;
+            right: 15px;
+
+            margin-top: -5px;
+            width: 7px;
+            height: 7px;
+
+            border-top: 2px solid rgba(31, 32, 65, 0.75);
+            border-right: 2px solid rgba(31, 32, 65, 0.75);
+            transform: rotate(135deg);
+        }
+    }
+    .date-dropdown__calendar{
+        width: 320px;
+        min-height: 369px;
+        height: 1px;
+        padding: 0% 2%;
+        box-sizing: border-box;
+
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        box-sizing: border-box;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        border-radius: 4px;
+
+
+        .date-dropdown__month{
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+
+            height: 15%;
+
+            .date-dropdown__month-name{
+                position: absolute;
+                top: 50%;
+
+                margin-top: -12px;
+
+                font-weight: 700;
+                size: 19px;
+                line-height: 24px;
+            }
+
+            .date-dropdown__arrow-left{
+                position: absolute;
+                top: 50%;
+                left: 0%;
+
+                width: 22px;
+                height: 22px;
+                margin-top: -11px; // minus half of height
+                
+                cursor: pointer ;
+
+                .date-dropdown__arrow-left__tail{
+                    position: absolute;
+                    top: 50%;
+                    
+                    width: 20px;
+                    height: 2px;
+
+                    background-color: #BC9CFF;
+                    
+
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        top: -4.5px;
+                        left: -2px;
+
+                        width: 14px;
+                        height: 2px;
+
+                        background-color: #BC9CFF;
+                        transform: rotate(-45deg);
+                    }
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: 4.5px;
+                        left: -2px;
+
+                        width: 14px;
+                        height: 2px;
+                        
+                        background-color: #BC9CFF;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+            .date-dropdown__arrow-right{
+                position: absolute;
+                top: 50%;
+                right: 0%;
+
+                width: 22px;
+                height: 22px;
+                margin-top: -11px; // minus half of height
+                
+                cursor: pointer ;
+
+                .date-dropdown__arrow-right__tail{
+                    position: absolute;
+                    top: 50%;
+                    
+                    width: 20px;
+                    height: 2px;
+
+                    background-color: #BC9CFF;
+                    
+
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        top: -4.5px;
+                        right: -2px;
+
+                        width: 14px;
+                        height: 2px;
+
+                        background-color: #BC9CFF;
+                        transform: rotate(45deg);
+                    }
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: 4.5px;
+                        right: -2px;
+
+                        width: 14px;
+                        height: 2px;
+                        
+                        background-color: #BC9CFF;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+
+            
+        }
+
+        .date-dropdown__week-days{
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            height: 10%;
+
+            @mixin week-day() {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                max-width: 40px;
+                max-height: 40px;
+
+                border: 0px solid black;
+
+                text-align: center;
+                color: #BC9CFF;
+                font-weight: 700;
+                line-height: 14px;
+                font-size: 12px;
+                background-color: white;
+                
+            }
+            .date-dropdown__mon{
+                @include week-day();
+            }
+            .date-dropdown__tue{
+                @include week-day();
+            }
+            .date-dropdown__wed{
+                @include week-day();
+            }
+            .date-dropdown__thu{
+                @include week-day();
+            }
+            .date-dropdown__fri{
+                @include week-day();
+            }
+            .date-dropdown__sat{
+                @include week-day();
+            }
+            .date-dropdown__sun{
+                @include week-day();
+            }
+
+            
+        }
+
+        .date-dropdown__dates{
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-row-gap: 2px;
+            max-height: 60%;
+
+
+            .date-dropdown__date{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                max-width: 40px;
+                min-height: 40px;
+
+                border-radius: 30px;
+
+                background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+            }
+        }
+        .date-dropdown__btns{
+            height: 10%;
+
+            background-color: lightgray;
+        }
     }
 
     
