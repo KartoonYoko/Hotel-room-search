@@ -367,6 +367,7 @@
                 font-weight: 700;
                 size: 19px;
                 line-height: 24px;
+                cursor: default;
             }
 
             .date-dropdown__arrow-left{
@@ -487,6 +488,7 @@
                 line-height: 14px;
                 font-size: 12px;
                 background-color: white;
+                cursor: default;
                 
             }
             .date-dropdown__mon{
@@ -531,13 +533,59 @@
 
                 border-radius: 30px;
 
+                cursor: pointer;
+                background: white;
+            }
+            .date-dropdown__date-last-month{
+                color: rgba(31, 32, 65, 0.25);
+            }
+            .date-dropdown__date-active{
+                color: white;
                 background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
             }
+
         }
         .date-dropdown__btns{
-            height: 10%;
+            position: relative;
 
-            background-color: lightgray;
+            height: 10%;
+        
+            @mixin btn {
+                font-weight: bold;
+                font-size: 12px;
+                line-height: 15px;
+                
+                border: none;
+                text-transform: uppercase;
+
+                color: #BC9CFF;
+                background-color: white;
+                
+                outline: none;
+                border: none;
+
+                max-height: 15px;
+                max-width: 90px;
+
+                &:hover, &:focus, &:active{
+                    cursor: pointer;
+                    color: #a47cfc;
+                }
+            }
+            .date-dropdown__btn-clear{
+                position: absolute;
+                top: 40%;
+
+                @include btn();
+            }
+            .date-dropdown__btn-accept{
+                position: absolute;
+                top: 40%;
+                right: 0;
+
+
+                @include btn();
+            }
         }
     }
 
