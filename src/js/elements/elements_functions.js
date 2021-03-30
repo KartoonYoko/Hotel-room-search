@@ -183,3 +183,119 @@ counters.forEach(element => {
         changeCircleMinusClass(element, counter.value);
     }
 });
+
+
+let cal = new Calendar(2019, 9);
+
+changeheadOfCalendar(cal);
+setDates(cal);
+
+let leftArrow = document.querySelector('.date-dropdown__arrow-left');
+let rightArrow = document.querySelector('.date-dropdown__arrow-right');
+
+let prevMonth = cal.prevMonth.bind(cal);
+let nextMonth = cal.nextMonth.bind(cal);
+
+leftArrow.addEventListener('click', prevMonth);
+rightArrow.addEventListener('click', nextMonth);
+
+/**
+ * @param {Calendar} calendar
+ */
+function changeheadOfCalendar(calendar){
+    let calendarYearMonth = document.querySelector('.date-dropdown__month-name');
+    let year = calendar.getYear();
+    let month = calendar.getMonth();
+
+    switch(month){
+        case 0:
+            month = "Январь";
+            break;
+        case 1:
+            month = "Февраль";
+            break;
+        case 2:
+            month = "Март";
+            break;
+        case 3:
+            month = "Апрель";
+            break;
+        case 4:
+            month = "Май";
+            break;
+        case 5:
+            month = "Июнь";
+            break;
+        case 6:
+            month = "Июль";
+            break;
+        case 7:
+            month = "Август";
+            break;
+        case 8:
+            month = "Сентябрь";
+            break;
+        case 9:
+            month = "Октябрь";
+            break;
+        case 10:
+            month = "Ноябрь";
+            break;
+        case 11:
+            month = "Декабрь";
+            break;
+        default:
+            month = "Неведомая штука";
+
+    }
+
+    calendarYearMonth.innerHTML = month + " " + year;
+}
+
+leftArrow.addEventListener('click', () => changeheadOfCalendar(cal));
+rightArrow.addEventListener('click', () => changeheadOfCalendar(cal));
+
+/**
+ * задает даты текущего месяца
+ * @param {Calendar} calendar 
+ */
+function setDates(calendar){
+    
+    let datesWrapper = document.querySelector('.date-dropdown__dates');
+    datesWrapper.innerHTML = "";
+    let dates = calendar.getDates();
+    
+    let isLastMonth = false;
+
+    dates.forEach(element => {
+        let div = document.createElement("div");
+        div.className = "date-dropdown__date";
+        
+        if (element == 1) { isLastMonth = true; }
+        if (!isLastMonth) div.className += " date-dropdown__date-last-month";
+
+        div.innerHTML = element;
+        div.addEventListener('click', markDate);
+
+        datesWrapper.append(div);
+    });
+}
+
+/**
+ * 
+ */
+function markDate(event){
+    
+    let dates = document.querySelectorAll('.date-dropdown__date');
+    dates.forEach(element => {
+        if (element.classList.contains("date-dropdown__date-active")){
+            element.classList.remove("date-dropdown__date-active");
+        }
+
+        event.currentTarget.classList.add("date-dropdown__date-active");
+    });
+
+}
+
+leftArrow.addEventListener('click', () => setDates(cal));
+rightArrow.addEventListener('click', () => setDates(cal));
